@@ -1,0 +1,11 @@
+CUDA_VISIBLE_DEVICES=1,5 torchrun --nproc_per_node=2 ddp_test.py \
+    --dataset imagenet \
+    --amplitude_cut_range 10 \
+    --phase_cut_range 10 \
+    --delta 0.3 \
+    --def_max_timesteps 50,50,50,50,50,50,50,50 \
+    --def_num_denoising_steps 5,5,5,5,5,5,5,5 \
+    --att_max_timesteps 50 \
+    --att_num_denoising_steps 1 \
+    --attack_method aa \
+    --num_ensemble_runs 10
